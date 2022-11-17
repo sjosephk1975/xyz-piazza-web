@@ -1,12 +1,12 @@
 databases:
-- name: piazza-db
-  ipAllowList: []
+  - name: piazza-db
+    ipAllowList: []
 
 services:
   - type: web
     name: piazza-web
     env: ruby
-    buildCommand: ./bin/render-build.sh
+    buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails
     envVars:
       - key: RAILS_MASTER_KEY
